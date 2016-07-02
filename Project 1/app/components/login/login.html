@@ -1,0 +1,52 @@
+<section class="section bg-white main-content" id="login-section">
+    <!--BEGIN: Main body content-->
+    <!-- zend coding to create form with simple steps 
+    div.form-group>label+input.form-control[type='text'] & click on tab(keyboard) it will
+    return 
+    <div class="form-group"><label for=""></label><input type="text" class="form-control"></div>
+    really cool :)
+    -->
+    <div class="row">
+        <div class="medium-12 columns">
+            <div class="medium-12 small-11 column text-center-device" align="center">
+                <a href="index.html" class="logo" title="Nitetil">
+                    <img src="assets/img/logo.png" />
+                </a>
+            </div>
+            <div class="clear">&nbsp;</div>
+
+            <form>
+                <div class="form-group">
+                    <label for="emailId">Email Id: </label>
+                    <input 
+                        id="emailId" 
+                        #emailId="ngForm" 
+                        ngControl="emailId" 
+                        type="email" 
+                        required 
+                        placeholder="please enter your email here">
+                    <div *ngIf="submitAttempt && !emailId.valid" ngClass="error">
+                        Please enter email address
+                    </div>
+                </div>
+                <div class="field-section">
+                    <label for="password">Password</label>
+                    <input type="password" 
+                        required 
+                        id="password" 
+                        ngControl="password" 
+                        #password="ngForm" 
+                        name="password" 
+                        placeholder="please enter your password">
+                    <div *ngIf="submitAttempt && !password.valid" ngClass="error">
+                        Please enter password
+                    </div>
+                </div>
+                <div class="btn-section">
+                    <input type="submit" ngClick="registerUser()" class="form-button" title="click me to Submit form" value="Submit">
+                </div>
+            </form>
+
+        </div>
+    </div>
+</section>
